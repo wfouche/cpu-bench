@@ -18,8 +18,8 @@ from __future__ import print_function, division
 
 # import datetime; print(datetime.datetime.now())
 
-BUILD_VERSION   = "1.2.1"
-BUILD_TIMESTAMP = "2019-11-20 19:59:48.297734"
+BUILD_VERSION   = "1.2.2"
+BUILD_TIMESTAMP = "2021-02-19 21:30:44.047214"
 
 #---------------------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ HOSTNAME = socket.gethostname()
 if platform.system() == "Windows":
     exe_compute_N = "./compute_N.exe"
 else:
-    exe_compute_N = "./compute_N.%s"%(platform.processor())
+    exe_compute_N = "./compute_N.%s"%(platform.machine())
 
 #---------------------------------------------------------------------------------------
 	
@@ -448,7 +448,7 @@ if __name__ == "__main__":
             print("")
             print("Server Hardware:")
             print("")            
-            print("    Number of LCPUs (logical CPUs, hardware threads): %d (%s)"%(num_cpus,platform.processor()))
+            print("    Number of LCPUs (logical CPUs, hardware threads): %d (%s)"%(num_cpus,platform.machine()))
 
         if ("--si" in d.keys()) and ("--sc" in d.keys()):
             si = to_seconds(d["--si"])
