@@ -1,13 +1,9 @@
-set PY_HOME=c:\Python36
-set PY_EXE=%PY_HOME%\python.exe
-set PY_INSTALLER=%PY_HOME%\Scripts\pyinstaller.exe
-
 pushd ..
 
 rd/q/s build
 rd/q/s dist
 
-%PY_INSTALLER% ..\src\cpu-bench.py
+pyinstaller ..\src\cpu-bench.py
 
 rd /q/s ..\src\__pycache__
 
